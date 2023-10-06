@@ -1,42 +1,47 @@
 #LIBS
 from tkinter import *
-from os import *
-from PIL import ImageTk,Image
-
-
-#global variables
-global loginbg
+import pickle
 
 
 
-def splashScreen():
-    splash=Tk()
-    splash.title("P A S S W O R D  M A N A G E R")
-    splash.geometry("800x600")
-    splash.resizable(False,False)
-    image = Image.open("mains/images/loginbg.jpg")
-    loginbg= ImageTk.PhotoImage(image)
-    bg=Label(splash,image=loginbg)
-    bg.pack()
-    loginFrame=Frame(splash,bg="white",height=30,width=35)
-    loginFrame.place(x=100,y=100)
-    
-    
-    
-    splash.mainloop()
+#Setting gui:
+root=Tk()
+root.geometry('800x500')
+root.title("PASSWORD MANAGER")
+root.resizable(False,False)
 
-
-#creating main window
-def mainWindow():
-    root=Tk()
-    root.title("P A S S W O R D  M A N A G E R")
-    root.resizable(False,False)
-    root.geometry("700x500")
-    root.mainloop()
+#Global Variables
 
 
 
 
 
-#main functions
-splashScreen()
+#Side bar
+sideBar=Frame(root,bg="grey",width=200,height=500)
+sideBar.place(x=0,y=0)
+
+#Side bar Buttons
+
+
+
+
+
+
+
+#main body
+mainBody=Frame(root,bg='red',width=600,height=465)
+mainBody.place(y=0,x=200)
+
+#Search box
+
+searchBox=Entry(root,width=80,relief='flat',bg='blue')
+searchBox.place(x=200,y=465,height=35)
+
+#Main body buttons
+
+
+
+
+
+#Main function call
+root.mainloop()
